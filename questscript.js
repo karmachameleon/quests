@@ -57,6 +57,7 @@ $(document).ready(function(){
     visiblequests.css({"background-color": "#adadad"});
     visiblequests.filter(":even").css({"background-color": "#CACACA"});
   }
+
   function reset() {
     $(".reset").hide();
     $("#generic").show();
@@ -177,6 +178,7 @@ $(document).ready(function(){
     $(".chosen").removeClass("chosen");
     $("#onequests, #twoquests, #threequests, #fourquests, #fivequests").children("div").children("span").addClass("hideXP");
     clearXP();
+    clearUnsuit();
     clearHidden();
   }
 
@@ -187,6 +189,15 @@ $(document).ready(function(){
   function clearXP(){
     quest1xp = quest2xp = quest3xp = quest4xp = quest5xp = 0;
     calcXP();
+  }
+
+  function loseFocus(quests){
+    quests.children("span").addClass("hideXP");
+    quests.removeClass("chosen");
+  }
+
+  function clearUnsuit() {
+    $(".unsuitable").removeClass("unsuitable");
   }
 
   //set form to chosen color
@@ -205,7 +216,7 @@ $(document).ready(function(){
   function makeBlue() {
     $("#color span.colortitle").text("Blue (Bindings)");
     $("#color").css({"background-color": "#3B72C7", "border-color": "#121866"});
-    $(".questbox").css({"background-color": "#657CA5", "border-color": "#073096"});
+    $(".questbox").css({"background-color": "#6280A5", "border-color": "#073096"});
     $(".questbox").children("div:not('.bDesc')").addClass('hideColor');
     $(".bDesc, .questdata").removeClass('hideColor').show();
     $("#one").find(".arctitle").text("Bindings One");
@@ -217,7 +228,7 @@ $(document).ready(function(){
   function makeOrange() {
     $("#color span.colortitle").text("Orange (Knight)");
     $("#color").css({"background-color": "#D46233", "border-color": "#B7381E"});
-    $(".questbox").css({"background-color": "#F07D57", "border-color": "#E05929"});
+    $(".questbox").css({"background-color": "#F0A364", "border-color": "#E05929"});
     $(".questbox").children("div:not('.oDesc')").addClass('hideColor');
     $(".oDesc, .questdata").removeClass('hideColor').show();
     $("#one").find(".arctitle").text("Knight One");
@@ -240,8 +251,8 @@ $(document).ready(function(){
   }
   function makeRed() {
     $("#color span.colortitle").text("Red (Storyteller)");
-    $("#color").css({"background-color": "#e0e0e0", "border-color": "#6B0200"});
-    $(".questbox").css({"background-color": "#e0e0e0", "border-color": "#B0232A"});
+    $("#color").css({"background-color": "#B03E43", "border-color": "#6B0200"});
+    $(".questbox").css({"background-color": "#E86B7B", "border-color": "#911411"});
     $(".questbox").children("div:not('.rDesc')").addClass('hideColor');
     $(".rDesc, .questdata").removeClass('hideColor').show();
     $("#one").find(".arctitle").text("Storyteller One");
@@ -252,8 +263,8 @@ $(document).ready(function(){
   }
   function makeGold() {
     $("#color span.colortitle").text("Gold (Aspect)");
-    $("#color").css({"background-color": "#e0e0e0", "border-color": "#F9AE19"});
-    $(".questbox").css({"background-color": "#e0e0e0", "border-color": "#FFD83E"});
+    $("#color").css({"background-color": "#FFE261", "border-color": "#F9AE19"});
+    $(".questbox").css({"background-color": "#FFED90", "border-color": "#FFC023"});
     $(".questbox").children("div:not('.yDesc')").addClass('hideColor');
     $(".yDesc, .questdata").removeClass('hideColor').show();
     $("#one").find(".arctitle").text("Aspect One");
@@ -264,8 +275,8 @@ $(document).ready(function(){
   }
   function makePurple() {
     $("#color span.colortitle").text("Purple (Shepherd)");
-    $("#color").css({"background-color": "#e0e0e0", "border-color": "#540B75"});
-    $(".questbox").css({"background-color": "#e0e0e0", "border-color": "#782C91"});
+    $("#color").css({"background-color": "#782C91", "border-color": "#540B75"});
+    $(".questbox").css({"background-color": "#8B63B0", "border-color": "#5C2182"});
     $(".questbox").children("div:not('.pDesc')").addClass('hideColor');
     $(".pDesc, .questdata").removeClass('hideColor').show();
     $("#one").find(".arctitle").text("Shepherd One");
@@ -276,8 +287,8 @@ $(document).ready(function(){
   }
   function makeSilver() {
     $("#color span.colortitle").text("Silver (Emptiness)");
-    $("#color").css({"background-color": "#e0e0e0", "border-color": "#5E5B6E"});
-    $(".questbox").css({"background-color": "#e0e0e0", "border-color": "#8D8BA1"});
+    $("#color").css({"background-color": "#8D8BA1", "border-color": "#4A4857"});
+    $(".questbox").css({"background-color": "#A3A1AA", "border-color": "#726E85"});
     $(".questbox").children("div:not('.sDesc')").addClass('hideColor');
     $(".sDesc, .questdata").removeClass('hideColor').show();
     $("#one").find(".arctitle").text("Emptiness One");
@@ -288,8 +299,8 @@ $(document).ready(function(){
   }
   function makeBlack() {
     $("#color span.colortitle").text("Black (Mystic)");
-    $("#color").css({"background-color": "#e0e0e0", "border-color": "#201C35"});
-    $(".questbox").css({"background-color": "#e0e0e0", "border-color": "#313143"});
+    $("#color").css({"background-color": "#616167", "border-color": "#02050D"});
+    $(".questbox").css({"background-color": "#817C93", "border-color": "#3E3E5B"});
     $(".questbox").children("div:not('.kDesc')").addClass('hideColor');
     $(".kDesc, .questdata").removeClass('hideColor').show();
     $("#one").find(".arctitle").text("Mystic One");
@@ -370,8 +381,7 @@ $(document).ready(function(){
   }
 
   firstquests.on("click", function() {
-    $("#onequests").children(".chosen").children("span").addClass("hideXP");
-    firstquests.removeClass("chosen");
+    loseFocus($("#onequests").children(".chosen"));
     $("#one").children(".choice").text($(this).contents().eq(0).text()).addClass("chosen");
     $(this).addClass("chosen");
     $(this).children(".hideXP").removeClass("hideXP");
@@ -379,61 +389,62 @@ $(document).ready(function(){
     $("#twoquests").show();
     //console.log($(event.target).is("span"));
     if ($(this).hasClass("xpvar") && !($(event.target).is("span"))) {
+      $(this).children().children().removeClass("highlight");
       quest1xp = 0;
       calcXP();
     }
     stripe();
   });
   secondquests.on("click", function() {
-    $("#twoquests").children(".chosen").children("span").addClass("hideXP");
-    secondquests.removeClass("chosen");
+    loseFocus($("#twoquests").children(".chosen"));
     $("#two").children(".choice").text($(this).contents().eq(0).text()).addClass("chosen");
     $(this).addClass("chosen");
     $(this).children(".hideXP").removeClass("hideXP");
     filter($(this), "hide2", findFilter(2));
     $("#threequests").show();
     if ($(this).hasClass("xpvar") && !($(event.target).is("span"))) {
+      $(this).children().children().removeClass("highlight");
       quest2xp = 0;
       calcXP();
     }
     stripe();
   });
   thirdquests.on("click", function() {
-    $("#threequests").children(".chosen").children("span").addClass("hideXP");
-    thirdquests.removeClass("chosen");
+    loseFocus($("#threequests").children(".chosen"));
     $("#thr").children(".choice").text($(this).contents().eq(0).text()).addClass("chosen");
     $(this).addClass("chosen");
     $(this).children(".hideXP").removeClass("hideXP");
     filter($(this), "hide3", findFilter(3));
     $("#fourquests").show();
     if ($(this).hasClass("xpvar") && !($(event.target).is("span"))) {
+      $(this).children().children().removeClass("highlight");
       quest3xp = 0;
       calcXP();
     }
     stripe();
   });
   fourthquests.on("click", function() {
-    $("#fourquests").children(".chosen").children("span").addClass("hideXP");
-    fourthquests.removeClass("chosen");
+    loseFocus($("#fourquests").children(".chosen"));
     $("#four").children(".choice").text($(this).contents().eq(0).text()).addClass("chosen");
     $(this).addClass("chosen");
     $(this).children(".hideXP").removeClass("hideXP");
     filter($(this), "hide4", findFilter(4));
     $("#fivequests").show();
     if ($(this).hasClass("xpvar") && !($(event.target).is("span"))) {
+      $(this).children().children().removeClass("highlight");
       quest4xp = 0;
       calcXP();
     }
     stripe();
   });
   fifthquests.on("click", function() {
-    $("#fivequests").children(".chosen").children("span").addClass("hideXP");
-    fifthquests.removeClass("chosen");
+    loseFocus($("#fivequests").children(".chosen"));
     $("#five").children(".choice").text($(this).contents().eq(0).text()).addClass("chosen");
     $(this).addClass("chosen");
     $(this).children(".hideXP").removeClass("hideXP");
     filter($(this), "hide5", findFilter(5));
     if ($(this).hasClass("xpvar") && !($(event.target).is("span"))) {
+      $(this).children().children().removeClass("highlight");
       quest5xp = 0;
       calcXP();
     }
@@ -458,7 +469,7 @@ $(document).ready(function(){
       $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
       temp.addClass("chosen");
       temp.children(".hideXP").removeClass("hideXP");
-      temp = $("#twoquests .adventure.b.prime");
+      temp = $("#twoquests .adventure.b");
       $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
       temp.addClass("chosen");
       temp.children(".hideXP").removeClass("hideXP");
@@ -557,7 +568,7 @@ $(document).ready(function(){
       $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
       temp.addClass("chosen");
       temp.children(".hideXP").removeClass("hideXP");
-      temp = $("#twoquests .bitter.p:not('.prime')");
+      temp = $("#twoquests .bitter.p");
       $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
       temp.addClass("chosen");
       temp.children(".hideXP").removeClass("hideXP");
@@ -565,7 +576,7 @@ $(document).ready(function(){
       $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
       temp.addClass("chosen");
       temp.children(".hideXP").removeClass("hideXP");
-      temp = $("#fourquests .bitter.p.prime");
+      temp = $("#fourquests .bitter.p");
       $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
       temp.addClass("chosen");
       temp.children(".hideXP").removeClass("hideXP");
@@ -585,7 +596,6 @@ $(document).ready(function(){
   $("#gmd").on("change", function() {
     clearChoices();
     var selector;
-    var primes = ['', '', '', '', ''];
     var colChar;
     var temp;
     var input = $("#gmd").val();
@@ -600,7 +610,6 @@ $(document).ready(function(){
       nonblu.addClass('hideColor');
       showMoreQuests();
       colChar = ".b";
-      primes[1] = ".prime";
       clearXP();
       $("span.xptotal").text("65-185");
     }
@@ -656,7 +665,6 @@ $(document).ready(function(){
       silQ.removeClass('hideColor');
       nonsil.addClass('hideColor');
       showMoreQuests();
-      primes[2] = ".prime";
       colChar = ".s";
       clearXP();
       $("span.xptotal").text("60-195");
@@ -683,27 +691,27 @@ $(document).ready(function(){
       stripe();
       return;
     }
-    selector = "#onequests ." + input + colChar + primes[0];
+    selector = "#onequests ." + input + colChar;
     temp = $(selector);
     $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
     temp.addClass("chosen");
     temp.children(".hideXP").removeClass("hideXP");
-    selector = "#twoquests ." + input + colChar + primes[1];
+    selector = "#twoquests ." + input + colChar;
     temp = $(selector);
     $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
     temp.addClass("chosen");
     temp.children(".hideXP").removeClass("hideXP");
-    selector = "#threequests ." + input + colChar + primes[2];
+    selector = "#threequests ." + input + colChar;
     temp = $(selector);
     $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
     temp.addClass("chosen");
     temp.children(".hideXP").removeClass("hideXP");
-    selector = "#fourquests ." + input + colChar + primes[3];
+    selector = "#fourquests ." + input + colChar;
     temp = $(selector);
     $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
     temp.addClass("chosen");
     temp.children(".hideXP").removeClass("hideXP");
-    selector = "#fivequests ." + input + colChar + primes[4];
+    selector = "#fivequests ." + input + colChar;
     temp = $(selector);
     $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
     temp.addClass("chosen");
@@ -755,9 +763,7 @@ $(document).ready(function(){
   });
 
   //show/hide by color
-  //needs: check for incompatability on color change then recalc XP
   $("#blu").on("click", function() {
-    clearHidden();
     var skip = false;
     if ($(this).hasClass("unsuitable")){
       $("#subtitle").show();
@@ -771,6 +777,7 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
+    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#blu')").addClass("deselect");
     makeBlue();
@@ -817,9 +824,13 @@ $(document).ready(function(){
         temp.children(".hideXP").removeClass("hideXP");
         clearXP();
       }
+      else {
+        compatible("blue");
+      }
     }
     stripe();
   });
+
   $("#ora").on("click", function() {
     clearHidden();
     var skip = false;
@@ -835,6 +846,7 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
+    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#ora')").addClass("deselect");
     makeOrange();
@@ -882,8 +894,12 @@ $(document).ready(function(){
         clearXP();
       }
     }
+    else {
+      compatible("orange");
+    }
     stripe();
   });
+
   $("#gre").on("click", function() {
     clearHidden();
     var skip = false;
@@ -944,9 +960,13 @@ $(document).ready(function(){
         temp.children(".hideXP").removeClass("hideXP");
         clearXP();
       }
+      else {
+        compatible("green");
+      }
     }
     stripe();
   });
+
   $("#red").on("click", function() {
     clearHidden();
     var skip = false;
@@ -962,6 +982,7 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
+    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#red')").addClass("deselect");
     makeRed();
@@ -1007,9 +1028,13 @@ $(document).ready(function(){
         temp.children(".hideXP").removeClass("hideXP");
         clearXP();
       }
+      else {
+        compatible("red");
+      }
     }
     stripe();
   });
+
   $("#gol").on("click", function() {
     clearHidden();
     var skip = false;
@@ -1025,6 +1050,7 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
+    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#gol')").addClass("deselect");
     makeGold();
@@ -1070,9 +1096,13 @@ $(document).ready(function(){
         temp.children(".hideXP").removeClass("hideXP");
         clearXP();
       }
+      else {
+        compatible("gold");
+      }
     }
     stripe();
   });
+
   $("#pur").on("click", function() {
     clearHidden();
     var skip = false;
@@ -1088,6 +1118,7 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
+    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#pur')").addClass("deselect");
     makePurple();
@@ -1133,9 +1164,13 @@ $(document).ready(function(){
         temp.children(".hideXP").removeClass("hideXP");
         clearXP();
       }
+      else {
+        compatible("purple");
+      }
     }
     stripe();
   });
+
   $("#sil").on("click", function() {
     clearHidden();
     var skip = false;
@@ -1151,6 +1186,7 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
+    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#sil')").addClass("deselect");
     makeSilver();
@@ -1196,9 +1232,13 @@ $(document).ready(function(){
         temp.children(".hideXP").removeClass("hideXP");
         clearXP();
       }
+      else {
+        compatible("silver");
+      }
     }
     stripe();
   });
+
   $("#bla").on("click", function() {
     clearHidden();
     var skip = false;
@@ -1214,6 +1254,7 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
+    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#bla')").addClass("deselect");
     makeBlack();
@@ -1259,86 +1300,71 @@ $(document).ready(function(){
         temp.children(".hideXP").removeClass("hideXP");
         clearXP();
       }
+      else {
+        compatible("black");
+      }
     }
     stripe();
   });
 
 
-    //xp tracking
-    xpVals.on("click", function() {
-      var value = 0;
-      var was = false;
-      if($(this).hasClass("highlight")){
-        $(this).removeClass("highlight");
-        was = true;
-      }
-      else {
-        value = getXPvalue($(this));
-      }
-      if($(this).is("span") && !was){
-        $(this).parent().children().removeClass("highlight");
-        $(this).addClass("highlight");
-      }
-      if ($(this).closest("#onequests").length){
-        quest1xp = value;
-      }
-      else if ($(this).closest("#twoquests").length){
-        quest2xp = value;
-      }
-      else if ($(this).closest("#threequests").length){
-        quest3xp = value;
-      }
-      else if ($(this).closest("#fourquests").length){
-        quest4xp = value;
-      }
-      else if ($(this).closest("#fivequests").length){
-        quest5xp = value;
-      }
-      calcXP();
-    });
+  //possible future refinement: check for incompatability on color change then recalc XP
+  function compatible(color){
 
-    function getXPvalue(e){
-      result = 0;
-      if (e.hasClass("15")){
-        result = 15;
-      }
-      else if (e.hasClass("20")){
-        result = 20;
-      }
-      else if (e.hasClass("25")){
-        result = 25;
-      }
-      else if (e.hasClass("30")){
-        result = 30;
-      }
-      else if (e.hasClass("35")){
-        result = 35;
-      }
-      else if (e.hasClass("40")){
-        result = 40;
-      }
-      else if (e.hasClass("45")){
-        result = 45;
-      }
-      else if (e.hasClass("50")){
-        result = 50;
-      }
-      else if (e.hasClass("55")){
-        result = 55;
-      }
-      else if (e.hasClass("60")){
-        result = 60;
-      }
-      return result;
+  }
+  //xp tracking
+  xpVals.on("click", function() {
+    var value = 0;
+    var was = false;
+    if($(this).hasClass("highlight")){
+      $(this).removeClass("highlight");
+      was = true;
     }
+    else {
+      value = getXPvalue($(this));
+    }
+    if($(this).is("span") && !was){
+      $(this).parent().children().removeClass("highlight");
+      $(this).addClass("highlight");
+    }
+    if ($(this).closest("#onequests").length){
+      quest1xp = value;
+    }
+    else if ($(this).closest("#twoquests").length){
+      quest2xp = value;
+    }
+    else if ($(this).closest("#threequests").length){
+      quest3xp = value;
+    }
+    else if ($(this).closest("#fourquests").length){
+      quest4xp = value;
+    }
+    else if ($(this).closest("#fivequests").length){
+      quest5xp = value;
+    }
+    calcXP();
+  });
 
-    function calcXP(){
-      var xpTotal = quest1xp + quest2xp + quest3xp + quest4xp + quest5xp;
-      $("span.xptotal").text(xpTotal);
-      $("#one").find(".xpcount").text(quest1xp == 0 ? "?" : quest1xp);
-      $("#two").find(".xpcount").text(quest2xp == 0 ? "?" : quest2xp);
-      $("#thr").find(".xpcount").text(quest3xp == 0 ? "?" : quest3xp);
-      $("#four").find(".xpcount").text(quest4xp == 0 ? "?" : quest4xp);
-      $("#five").find(".xpcount").text(quest5xp == 0 ? "?" : quest5xp);
+  xpDictionary = {"15":15, "20":20, "25":25, "30":30, "35":35, "40":40, "45":45, "50":50, "55":55, "60":60};
+  function getXPvalue(e){
+    var classList = e.attr('class').split(/\s+/);
+    console.log(classList);
+    for (item in classList){
+      console.log(classList[item]);
+      if (xpDictionary.hasOwnProperty(classList[item])) {
+        return xpDictionary[classList[item]];
+      }
     }
+    return 0;
+  }
+
+  function calcXP(){
+    var xpTotal = quest1xp + quest2xp + quest3xp + quest4xp + quest5xp;
+    $("span.xptotal").text(xpTotal);
+    $("#one").find(".xpcount").text(quest1xp == 0 ? "?" : quest1xp);
+    $("#two").find(".xpcount").text(quest2xp == 0 ? "?" : quest2xp);
+    $("#thr").find(".xpcount").text(quest3xp == 0 ? "?" : quest3xp);
+    $("#four").find(".xpcount").text(quest4xp == 0 ? "?" : quest4xp);
+    $("#five").find(".xpcount").text(quest5xp == 0 ? "?" : quest5xp);
+  }
 });
