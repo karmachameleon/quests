@@ -1,0 +1,345 @@
+<!-- Karma Chameleon; 2019
+Chuubo's Marvelous Wish-Granting Engine belongs to Jenna Katerin Moran
+-->
+<!doctype html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>Quest Set Builder</title>
+      <link rel="stylesheet" type="text/css" href="queststyle.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script type="text/javascript" src="questscript.js"></script>
+  </head>
+  <body>
+    <div style="color: #20262E" class="reset">If you're seeing this text something has gone wrong. Javascript is required to use this tool.</div>
+    <div id="content" class="hidden">
+    <div id="lists">
+      <div id="onequests" class="questlist"> <t1>Quest One</t1>
+        <div class="r xpvar">A New Hobby (Peaceful) <span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="y s xpvar">A New Hobby (Passionate) <span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="r 35">A New Job <span class="hideXP"> - 35 XP</span></div>
+        <div class="b s 50">Bind <span class="hideXP"> - 50 XP</span></div>
+        <div class="p 25">Connecting with Someone <span class="hideXP"> - 25 XP</span></div>
+        <div class="g k 25">The Door Into Memory <span class="hideXP"> - 25 XP</span></div>
+        <div class="b o y 40">Mental Training <span class="hideXP"> - 40 XP</span></div>
+        <div class="o s 40">The Object <span class="hideXP"> - 40 XP</span></div>
+        <div class="y s 40">Physical Training <span class="hideXP"> - 40 XP</span></div>
+        <div class="o 40">Taking Care of a Small Child <span class="hideXP"> - 40 XP</span></div>
+        <div class="p 25">Cleaning up an Old House (version 1) <span class="hideXP"> - 25 XP</span></div>
+        <div class="b g r p 25">Cleaning up an Old House (version 2) <span class="hideXP"> - 25 XP</span></div>
+
+        <div class="b g adventure leonardo rinNPC xpvar">Science! <span class="hideXP"> - <span class="20">20 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="s adventure leonardo rinNPC xpvar">Someone's in Trouble!<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="y adventure leonardo rinNPC xpvar">Above the Fray <span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+
+        <div class="o r looking rinley leoNPC xpvar">Adventure GET<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="p k looking rinley leoNPC xpvar">Down<span class="hideXP"> - <span class="35">35 XP</span> / <span class="45">45 XP</span></span></div>
+
+        <div class="g k s journey jasper natNPC xpvar">Changes<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="o journey jasper natNPC xpvar">The Refusal of the Call<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+
+        <div class="y p s bitter miramie chuNPC xpvar">Beautiful and Far Away<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="r bitter miramie chuNPC xpvar">Fascination<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+
+        <div class="g k chuubo mirNPC gmdq">Haunted<sup>*</sup> </div>
+        <!--Note that it's also possible to play NPC-Miramie interaction with her own quest set-->
+        <div class="b r gmdq">Wicked Creatures<sup>*</sup> </div>
+        <div class="b k gmdq">Asserting Your Existence<sup>*</sup> </div>
+        <div class="o g r seizhi entNPC gmdq 35">Encounters in the Night<sup>*</sup></div>
+        <div class="b seizhi entNPC gmdq">Behind the Mask<sup>*</sup></div>
+        <div class="y p s natalia jasNPC gmdq">A Troubled Protagonist<sup>*</sup></div>
+        <div class="o natalia jasNPCgmdq">An Unlikely Friendship<sup>*</sup></div>
+        <div class="p y s entropy seiNPC gmdq">The Story of Your Life<sup>*</sup></div>
+        <div class="b entropy seiNPC gmdq">The Sidekick<sup>*</sup></div>
+
+        <div class="b g k bdbl">Drawn into the Titovs <sup>**</sup> </div>
+        <div class="b g r p bdbl">Joining the Yatskaya <sup>**</sup> </div>
+        <div class="g bdbl">Joining the Sosunov <sup>**</sup> </div>
+        <div class="p bdbl">Getting to Know the Vasili<sup>**</sup> </div>
+        <div class="p s bdbl">Joining the Kichi <sup>**</sup>  </div>
+
+        <div class="b o p s bdbl">Friend to the Street Cats and Dogs <sup>**</sup> </div>
+        <div class="o p s k bdbl">Friend of the Beaches <sup>**</sup> </div>
+        <div class="o p s k bdbl">Friend to the Birds <sup>**</sup> </div>
+
+        <div class="o r s bdbl">Ship's Friend <sup>**</sup> </div>
+
+        <div class="b bdbl">Explorer <sup>**</sup> </div>
+        <div class="b g y s k bdbl">Love for the Water <sup>**</sup> </div>
+        <div class="b y p s bdbl">Shrine Duties <sup>**</sup> </div>
+        <div class="b g k bdbl">Trouble in Dreams <sup>**</sup> </div>
+        <div class="o p bdbl">Dependable Person <sup>**</sup> </div>
+        <div class="o p bdbl">Generic Project <sup>**</sup> </div>
+        <div class="o g y p k bdbl">Stale Life <sup>**</sup> </div>
+        <div class="o r bdbl">Up-to-Date <sup>**</sup>  </div>
+
+        <div class="g k bdbl">A Brush with a Mystery <sup>**</sup> </div>
+        <div class="g p bdbl">Shrine or Park Guardian <sup>**</sup> </div>
+        <div class="g s k bdbl">The Northern Beach <sup>**</sup> </div>
+        <div class="g bdbl">Troubled Divination <sup>**</sup> </div>
+
+        <div class="r p k bdbl">Little Ship <sup>**</sup> </div>
+        <div class="r p bdbl">Ship's Crew <sup>**</sup> </div>
+        <div class="r bdbl">The Great Dread Witch Hunt <sup>**</sup> </div>
+
+        <div class="y bdbl">Sacred Child <sup>**</sup> </div>
+
+        <div class="p bdbl">A Good Life <sup>**</sup> </div>
+        <div class="p s bdbl">Good Catch <sup>**</sup> </div>
+        <div class="p s bdbl">Keeping a Good Place <sup>**</sup> </div>
+        <div class="p bdbl">Trying to Fix Some Social Problem <sup>**</sup> </div>
+
+        <div class="s k bdbl">Crisis of Confidence <sup>**</sup> </div>
+        <div class="k bdbl">Transcendence <sup>**</sup> </div>
+
+        <div class="g k rinHZ tumbl 45">Roughing It <sup>†</sup> <span class="hideXP"> - 45 XP</span></div>
+        <div class="y s rinHZ tumbl">"Let's Recover in a Shadow World Spa" <sup>†</sup> <span class="hideXP"> - ? XP</span></div>
+      </div>
+
+      <div id="twoquests" class="reset showquests questlist"><t1>Quest Two</t1>
+        <div class="o s xpvar">A New Hobby (Peaceful) <span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="o r xpvar">A New Hobby (Passionate) <span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="p k 35">A New Job <span class="hideXP"> - 35 XP</span></div>
+        <div class="r p 50">Bind <span class="hideXP"> - 50 XP</span></div>
+        <div class="r 20">Concentrated Awesome <span class="hideXP"> - 20 XP</span></div>
+        <div class="g p k 25">Connecting with Someone <span class="hideXP"> - 25 XP</span></div>
+        <div class="b 25">The Door Into Memory <span class="hideXP"> - 25 XP</span></div>
+        <div class="y s 40">Mental Training <span class="hideXP"> - 40 XP</span></div>
+        <div class="r 40">The Object <span class="hideXP"> - 40 XP</span></div>
+        <div class="o 40">Physical Training <span class="hideXP"> - 40 XP</span></div>
+        <div class="r p 35">Preparing for a Festival or Event <span class="hideXP"> - 35 XP</span></div>
+        <div class="b p 40">Taking Care of a Small Child <span class="hideXP"> - 40 XP</span></div>
+        <div class="r s 25">Cleaning up an Old House (version 1) <span class="hideXP"> - 25 XP</span></div>
+        <div class="y s 25">Cleaning up an Old House (version 2) <span class="hideXP"> - 25 XP</span></div>
+
+        <div class="b s adventure leonardo rinNPC xpvar">Science!<span class="hideXP"> - <span class="20">20 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="b g y adventure leonardo rinNPC xpvar prime">Someone's in Trouble!<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="o r p looking rinley leoNPC xpvar">Let's Doing!<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="k looking rinley leoNPC xpvar">Labyrinth Diving<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="o journey jasper natNPC xpvar">Changes<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="g k journey jasper natNPC xpvar">The Refusal of the Call<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="s journey jasper natNPC xpvar">The Belly of the Whale<span class="hideXP"> - <span class="20">20 XP</span> / <span class="25">25 XP</span> / <span class="35">35 XP</span> / <span class="45">45 XP</span></span></div>
+        <div class="r p bitter miramie chuNPC xpvar prime">Beautiful and Far Away<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="p s bitter miramie chuNPC xpvar">Fascination<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <!-- Purple 2 needs to be not-prime. -->
+        <div class="r bitter miramie chuNPC xpvar">This is So Surreal<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="r bitter miramie chuNPC xpvar prime">This is Such a Bad Idea<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+
+        <div class="y bitter miramie chuNPC xpvar">Something Heals<span class="hideXP"> - <span class="25">25 XP</span> / <span class="45">45 XP</span></span></div>
+
+        <div class="o g r seizhi entNPC gmdq">The Troubled Sky<sup>*</sup></div>
+        <div class="b seizhi entNPC gmdq 35">Encounters in the Night<sup>*</sup></div>
+
+        <div class="y s rinHZ tumbl 45">Roughing It <sup>†</sup> <span class="hideXP"> - 45 XP</span></div>
+        <div class="g rinHZ tumbl xpvar">Troubled Legacies <sup>†</sup><span class="hideXP"> - <span class="20">20 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="k rinHZ tumbl">"Let's Recover in a Shadow World Spa" <sup>†</sup> <span class="hideXP"> - ? XP</span></div>
+
+
+      </div>
+
+      <div id="threequests" class="reset showquests questlist"><t1>Quest Three</t1>
+        <div class="k xpvar">A New Hobby (Peaceful) <span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="r y 50">Bind <span class="hideXP"> - 50 XP</span></div>
+        <div class="p 20">Concentrated Awesome <span class="hideXP"> - 20 XP</span></div>
+        <div class="p k 25">The Door Into Memory <span class="hideXP"> - 25 XP</span></div>
+        <div class="o g 40">Mental Training <span class="hideXP"> - 40 XP</span></div>
+        <div class="b o g s 35">Poisoned <span class="hideXP"> - 35 XP</span></div>
+        <div class="y s 35">Preparing for a Festival or Event <span class="hideXP"> - 35 XP</span></div>
+
+        <div class="b adventure leonardo rinNPC xpvar">Engineering! (aka A Conscious Life) <span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="g y s adventure leonardo rinNPC xpvar">Walking the Boundaries <span class="hideXP"> - <span class="25">25 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="k looking rinley leoNPC xpvar">Let's Doing!<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="o r looking rinley leoNPC xpvar">Labyrinth Diving<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="p looking rinley leoNPC xpvar">Climbing the Sacred Mountain<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="s journey jasper natNPC xpvar">The Refusal of the Call<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="o g k journey jasper natNPC xpvar">The Belly of the Whale<span class="hideXP"> - <span class="20">20 XP</span> / <span class="25">25 XP</span> / <span class="35">35 XP</span> / <span class="45">45 XP</span></span></div>
+        <div class="y bitter miramie chuNPC xpvar">Fascination<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="r p s bitter miramie chuNPC xpvar">This is So Surreal<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="r p s bitter miramie chuNPC xpvar">This is Such a Bad Idea<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="s bitter miramie chuNPC xpvar prime">You've Lost Them<span class="hideXP"> - <span class="20">20 XP</span> / <span class="45">45 XP</span></span></div>
+
+
+        <div class="o g r seizhi entNPC gmdq">Behind the Mask<sup>*</sup></div>
+        <div class="b seizhi entNPC gmdq">The Troubled Sky<sup>*</sup></div>
+
+        <div class="y s rinHZ tumbl xpvar">Troubled Legacies <sup>†</sup><span class="hideXP"> - <span class="20">20 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="k g rinHZ tumbl">"Concerned About Faraway Things, Despite..." <sup>†</sup> <span class="hideXP"> - ? XP</span></div>
+
+      </div>
+
+      <div id="fourquests" class="reset showquests questlist"><t1>Quest Four</t1>
+        <div class="k xpvar">A New Hobby (Passionate) <span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="b 20">Concentrated Awesome <span class="hideXP"> - 20 XP</span></div>
+        <div class="g o r k 25">The Door Into Memory <span class="hideXP"> - 25 XP</span></div>
+        <div class="r 40">Mental Training <span class="hideXP"> - 40 XP</span></div>
+        <div class="g 40">The Object <span class="hideXP"> - 40 XP</span></div>
+        <div class="r 40">Physical Training <span class="hideXP"> - 40 XP</span></div>
+        <div class="y s 35">Poisoned <span class="hideXP"> - 35 XP</span></div>
+
+        <div class="y adventure leonardo rinNPC xpvar">Science!<span class="hideXP"> - <span class="20">20 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="s adventure leonardo rinNPC xpvar">Engineering! (aka A Conscious Life) <span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="b g adventure leonardo rinNPC xpvar">Above the Fray <span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="p k looking rinley leoNPC xpvar">Adventure GET<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="r looking rinley leoNPC xpvar">Climbing the Sacred Mountain<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="o looking rinley leoNPC xpvar">Down<span class="hideXP"> - <span class="35">35 XP</span> / <span class="45">45 XP</span></span></div>
+        <div class="o g s k journey jasper natNPC xpvar">The Trials of the Sun<span class="hideXP"> - <span class="25">25 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="y p s bitter miramie chuNPC xpvar">This is So Surreal<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="y p s bitter miramie chuNPC xpvar">This is Such a Bad Idea<span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="p bitter miramie chuNPC xpvar prime">You've Lost Them<span class="hideXP"> - <span class="20">20 XP</span> / <span class="45">45 XP</span></span></div>
+        <div class="r bitter miramie chuNPC xpvar">Something Heals<span class="hideXP"> - <span class="25">25 XP</span> / <span class="45">45 XP</span></span></div>
+
+        <div class="o g r seizhi entNPC gmdq">Atonement<sup>*</sup></div>
+        <div class="b seizhi entNPC gmdq">The Struggle of the Knight <sup>*</sup> </div>
+
+        <div class="k rinHZ tumbl xpvar">Troubled Legacies <sup>†</sup><span class="hideXP"> - <span class="20">20 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="g rinHZ tumbl">"Let's Recover in a Shadow World Spa" <sup>†</sup> <span class="hideXP"> - ? XP</span></div>
+        <div class="y s rinHZ tumbl">"Concerned About Faraway Things, Despite..." <sup>†</sup> <span class="hideXP"> - ? XP</span></div>
+
+      </div>
+
+      <div id="fivequests" class="reset showquests questlist"><t1>Quest Five</t1>
+        <div class="b g 50">Bind <span class="hideXP"> - 50 XP</span></div>
+        <div class="o p 20">Concentrated Awesome <span class="hideXP"> - 20 XP</span></div>
+        <div class="o 40">Mental Training <span class="hideXP"> - 40 XP</span></div>
+        <div class="r 35">Poisoned <span class="hideXP"> - 35 XP</span></div>
+        <div class="p k 40">Taking Care of a Small Child <span class="hideXP"> - 40 XP</span></div>
+
+        <div class="b adventure leonardo rinNPC xpvar">Walking the Boundaries <span class="hideXP"> - <span class="25">25 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="g y adventure leonardo rinNPC xpvar">Engineering! (aka A Conscious Life) <span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="s adventure leonardo rinNPC xpvar">Above the Fray <span class="hideXP"> - <span class="20">20 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="p looking rinley leoNPC xpvar">Labyrinth Diving<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="o k looking rinley leoNPC xpvar">Climbing the Sacred Mountain<span class="hideXP"> - <span class="25">25 XP</span> / <span class="35">35 XP</span></span></div>
+        <div class="r looking rinley leoNPC xpvar">Down<span class="hideXP"> - <span class="35">35 XP</span> / <span class="45">45 XP</span></span></div>
+        <div class="o g s k journey jasper natNPC xpvar">Apotheosis<span class="hideXP"> - <span class="20">20 XP</span> / <span class="40">40 XP</span></span></div>
+        <div class="r y bitter miramie chuNPC xpvar">You've Lost Them<span class="hideXP"> - <span class="20">20 XP</span> / <span class="45">45 XP</span></span></div>
+        <div class="p s bitter miramie chuNPC xpvar">Something Heals<span class="hideXP"> - <span class="25">25 XP</span> / <span class="45">45 XP</span></span></div>
+
+        <div class="o g r seizhi entNPC gmdq">The Struggle of the Knight <sup>*</sup> </div>
+        <div class="b seizhi entNPC gmdq">Atonement<sup>*</sup></div>
+
+        <div class="g y s k rinHZ tumbl">"Unification" <sup>†</sup> <span class="hideXP"> - ? XP</span></div>
+
+      </div>
+
+      <br>
+      <div style="display: block; margin-left: auto; margin-right: auto; max-width: max-content;">
+        <button class="toggle" id="GMDtoggle">Show quests from GMD</button>
+        <button class="toggle" id="BDBLtoggle">Show quests from Big Lake</button>
+        <button class="toggle" id="tumblrtoggle">Show quests from Tumblr</button>
+      </div>
+      <br>
+      <div id="credits"><p>Chuubo's Marvelous Wish-Granting Engine belongs to Jenna Moran. Color icons, as seen in <i>The Glass-Maker's Dragon</i>, ripped by Xavid.</p>
+        <p class="gmdq"><sup>*</sup> Quest from The Glass-Maker's Dragon.</p>
+        <p class="bdbl"><sup>**</sup> Quest from By the Docks of Big Lake.</p>
+        <p class="tumbl"><sup>†</sup> Quest from blog posts about the development of the in-progress Horizon campaign, <a href="http://jennamoran.tumblr.com/tagged/the-horizon-campaign">available here.</a> Quest names "in quotation marks" are working titles.</p>
+      </div>
+    </div>
+    <div id="set">
+      <div id="menu">
+        <button id="blu" class="colorselect">B</button>
+        <button id="ora" class="colorselect">O</button>
+        <button id="gre" class="colorselect">G</button>
+        <button id="red" class="colorselect">R</button>
+        <button id="gol" class="colorselect">Y</button>
+        <button id="pur" class="colorselect">P</button>
+        <button id="sil" class="colorselect">S</button>
+        <button id="bla" class="colorselect">K</button>
+        <br>
+        <button id="gen" class="campaign">Generic</button>
+        <button id="glass" class="campaign">GMD</button>
+        <button id="horizon" class="campaign">Horizon</button>
+        <br>
+        <br>
+        <select id="generic" class="dropdown">
+          <option value="default">Generic quest sets...</option>
+          <option value="adventure">A Scientific Adventure</option>
+          <option value="looking">Looking for Trouble</option>
+          <option value="journey">A Heroic Journey</option>
+          <option value="bitter">A Bittersweet Saga</option>
+        </select>
+        <select id="gmd" class="dropdown reset">
+          <option value="default">The Glass-Maker's Dragon quest sets...</option>
+          <option value="chuubo">The Marvelous Misadventures...</option>
+          <option value="seizhi">The Secret History...</option>
+          <option value="leonardo">The Scientific Adventures...</option>
+          <option value="rinley">Having an Adventure...</option>
+          <option value="natalia">Literary Medal-Bait...</option>
+          <option value="jasper">The Heroic Journeys...</option>
+          <option value="entropyII">The Numinous Gardens...</option>
+          <option value="miramie">The Bittersweet Saga...</option>
+        </select>
+        <select id="hz" class="dropdown reset">
+          <option value="default">Upcoming Horizon campaign quest sets...</option>
+          <option value="rinHZ">The Rinley Yatskaya Series</option>
+        </select>
+        <br>
+        <br>
+      </div>
+        <div id="subtitle" class="text"></div>
+        <div id="subtitleII" class="text"></div>
+      <div id="color"><span class="colortitle">CMWGE Quest Set Builder</span> - <span class="xptotal">0</span> XP</div>
+      <div id="one" class="questbox"><div class="questtitle questdata"><span class="arctitle">Quest One</span> - <span class="xpcount">?</span> XP</div>
+        <div class="bDesc reset">Establishes you as a person who works with wicked, disreputable, or dangerous things.</div>
+        <div class="oDesc reset">You're figuring out who you want to be.</div>
+        <div class="gDesc reset">Dreams and supernatural experiences connect you to an external power.</div>
+        <div class="rDesc reset">red placeholder</div>
+        <div class="yDesc reset">gold placeholder</div>
+        <div class="pDesc reset">purple placeholder</div>
+        <div class="sDesc reset">silver placeholder</div>
+        <div class="kDesc reset">black placeholder</div>
+        <div class="choice questdata"><i>Choose a first quest, arc color,<br>or quest set to begin...</i></div>
+      </div>
+      <div id="two" class="questbox"><div class="questtitle questdata"><span class="arctitle">Quest Two</span> - <span class="xpcount">?</span> XP</div>
+        <div class="bDesc reset">Because of that, someone needs your help, or there's something you must do.</div>
+        <div class="oDesc reset">A vice of yours gets in the way.</div>
+        <div class="gDesc reset">The path you're on is frightening or burdensome.</div>
+        <div class="rDesc reset">red placeholder</div>
+        <div class="yDesc reset">gold placeholder</div>
+        <div class="pDesc reset">purple placeholder</div>
+        <div class="sDesc reset">silver placeholder</div>
+        <div class="kDesc reset">black placeholder</div>
+        <div class="choice questdata"></div>
+      </div>
+      <div id="thr" class="questbox"><div class="questtitle questdata"><span class="arctitle">Quest Three</span> - <span class="xpcount">?</span> XP</div>
+        <div class="bDesc reset">You have a complicated, difficult plan.</div>
+        <div class="oDesc reset">Something tries to change you or otherwise challenge your self-image.</div>
+        <div class="gDesc reset">Something is devouring you; growing inside you; taking you over.</div>
+        <div class="rDesc reset">red placeholder</div>
+        <div class="yDesc reset">gold placeholder</div>
+        <div class="pDesc reset">purple placeholder</div>
+        <div class="sDesc reset">silver placeholder</div>
+        <div class="kDesc reset">black placeholder</div>
+        <div class="choice questdata"></div>
+      </div>
+      <div id="four" class="questbox"><div class="questtitle questdata"><span class="arctitle">Quest Four</span> - <span class="xpcount">?</span> XP</div>
+        <div class="bDesc reset">You try to fix or reshape the world.</div>
+        <div class="oDesc reset">You try to make up for your mistakes.</div>
+        <div class="gDesc reset">You're lost to yourself. You aren't <i>you</i> any longer.</div>
+        <div class="rDesc reset">red placeholder</div>
+        <div class="yDesc reset">gold placeholder</div>
+        <div class="pDesc reset">purple placeholder</div>
+        <div class="sDesc reset">silver placeholder</div>
+        <div class="kDesc reset">black placeholder</div>
+        <div class="choice questdata"></div>
+      </div>
+      <div id="five" class="questbox"><div class="questtitle questdata"><span class="arctitle">Quest Five</span> - <span class="xpcount">?</span> XP</div>
+        <div class="bDesc reset">You explore the consequences of what you just did.</div>
+        <div class="oDesc reset">You become something better than you were.</div>
+        <div class="gDesc reset">You reconcile with someone or something you've been fighting.</div>
+        <div class="rDesc reset">red placeholder</div>
+        <div class="yDesc reset">gold placeholder</div>
+        <div class="pDesc reset">purple placeholder</div>
+        <div class="sDesc reset">silver placeholder</div>
+        <div class="kDesc reset">black placeholder</div>
+        <div class="choice questdata"></div>
+      </div>
+      <div class="tools">
+      <button id="recentclear">Clear Highest-Level Quest</button>
+      <button id="reset">Reset All</button>
+      <p style="color: white">This tool is not complete yet and there are definitely issues. If something's disastrously stuck, refreshing the page is currently more reliable than the reset button.</p>
+      <p style="color: white">Also by Karma Chameleon<br><a href="https://karmachameleon.github.io/arcs" style="color: white">Miraculous Arc Chart</a></p>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

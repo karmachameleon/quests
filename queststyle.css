@@ -1,0 +1,178 @@
+body {
+  background: #20262E;
+  padding: 20px;
+  font-family: Helvetica;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.hideColor, .hideCampaign, .hideXP, .hide1, .hide2, .hide3, .hide4, .hide5 {
+  display: none;
+}
+
+button{
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #E0E0E0;
+}
+
+button.campaign{
+  font-size: 1.4em;
+  margin: .2em .15em 0em .15em;
+  color: #000000;
+}
+
+button.toggle{
+  font-weight: normal;
+  font-size: .75em;
+  color: #000000;
+}
+
+span.highlight{
+  font-style: italic;
+}
+
+#reset{
+  font-size: 1em;
+  color: #000000;
+  background-color: #adadad;
+  margin-top: .3em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.text{
+  color: #adadad;
+}
+
+.icon{
+  width: 24px;
+  float: right;
+}
+
+t1{
+  font-size: 1.4em;
+}
+
+#set{
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 40%;
+}
+
+.questtitle{
+  text-align: right;
+}
+
+.choice{
+  text-align: center;
+}
+
+.chosen{
+  font-weight: bold;
+}
+
+.questdata.chosen{
+  font-size: 1.2em;
+}
+
+.questlist{
+  background-color: #adadad;
+  padding: 5px;
+  border: 3px solid #696969;
+}
+
+.questlist div{
+  height: 24px;
+  padding: 5px 5px 0 5px;
+}
+
+#lists{
+  width: 55%;
+  margin-right: 10px;
+}
+
+#color{
+  background-color: #ADADAD;
+  border: 3px solid #696969;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 5px 1px;
+  padding: 5px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.tools{
+  text-align: center; 
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.questbox{
+  border-radius: 5px;
+  background-color: #E0E0E0;
+  border: 3px solid #adadad;
+  margin: 5px 1px;
+  padding: 5px;
+}
+
+#recentclear{
+  color: #000000;
+  font-size: 1em;
+  background-color: #adadad;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#credits {
+  background-color: #ADADAD;
+  border: 3px solid #696969;
+  padding: 5px;
+}
+
+.deselect{
+  color: #000000;
+}
+
+#blu{
+  background-color: #121866;
+}
+
+#ora{
+  background-color: #B7381E;
+}
+
+#gre{
+  background-color: #016923;
+}
+
+#red{
+  background-color: #6B0200;
+}
+
+#gol{
+  background-color: #BA7B12;
+}
+
+#pur{
+  background-color: #540B75;
+}
+
+#sil{
+  background-color: #5E5B6E;
+}
+
+#bla{
+  background-color: #201C35;
+}
