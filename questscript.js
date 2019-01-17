@@ -625,7 +625,7 @@ $(document).ready(function(){
       showMoreQuests();
       colChar = ".o";
       clearXP();
-      $("span.xptotal").text("min-max");
+      $("span.xptotal").text("55-190");
     }
     else if (input == "rinley"){
       $("#subtitle").text("Having an Adventure the Rinley Yatskaya Way");
@@ -657,7 +657,7 @@ $(document).ready(function(){
     }
     else if (input == "miramie"){
       $("#subtitle").text("The Bittersweet Saga of Miramie Mesmer");
-      $("#subtitleII").text("Also used for interacting with The Dream-Witch or The Wishing Child as an NPC.");
+      $("#subtitleII").text("Also used for interacting with the Dream-Witch or the Wishing Child as an NPC.");
       plural = false;
       makeSilver();
       $(".colorselect").addClass("deselect unsuitable");
@@ -671,18 +671,45 @@ $(document).ready(function(){
     }
     else if (input == "chuubo"){
       $("#subtitle").text("The Marvelous Misadventures of Chuubo");
-      $("#subtitleII").text("WIP - Quest data not entered yet");
+      $("#subtitleII").text("Also used for interacting with the Wishing Child or the Dream-Witch as an NPC.");
       plural = true;
+      makeGreen();
+      $(".colorselect").addClass("deselect unsuitable");
+      $("#gre, #bla, #blu, #red").removeClass("deselect unsuitable");
+      greQ.removeClass('hideColor');
+      nongre.addClass('hideColor');
+      showMoreQuests();
+      colChar = ".g";
+      clearXP();
+      $("span.xptotal").text("65-175");
     } //finish!
     else if (input == "natalia"){
       $("#subtitle").text("Literary Medal-Bait: The Heartwarming, Heartrending Coming-of-Age Stories of Natalia Koutolika");
-      $("#subtitleII").text("WIP - Quest data not entered yet");
+      $("#subtitleII").text("Also used for interacting with the Child of the Sun as an NPC.");
       plural = true;
+      makeGold();
+      $(".colorselect").addClass("deselect unsuitable");
+      $("#gol, #pur, #bla, #ora").removeClass("deselect unsuitable");
+      golQ.removeClass('hideColor');
+      nongol.addClass('hideColor');
+      showMoreQuests();
+      colChar = ".y";
+      clearXP();
+      $("span.xptotal").text("70-190");
     }
     else if (input == "entropyII"){
       $("#subtitle").text("The Numinous Gardens of Entropy II, Magister");
-      $("#subtitleII").text("WIP - Quest data not entered yet");
+      $("#subtitleII").text("Also used for interacting with the Best Friend as an NPC.");
       plural = true;
+      makePurple();
+      $(".colorselect").addClass("deselect unsuitable");
+      $("#blu, #pur, #sil, #yel").removeClass("deselect unsuitable");
+      purQ.removeClass('hideColor');
+      nonpur.addClass('hideColor');
+      showMoreQuests();
+      colChar = ".p";
+      clearXP();
+      $("span.xptotal").text("65-185");
     }
     else {
       makeNeutral();
@@ -723,7 +750,7 @@ $(document).ready(function(){
     var input = $("#hz").val();
     if (input == "rinHZ"){
       $("#subtitle").text("The Rinley Yatskaya Series");
-      $("#subtitleII").text("The Horizon campaign is a work in progress. The full working title of 'Concerned About Faraway Things' is \"Very Concerned About Faraway Things Despite Being Eaten.\"");
+      $("#subtitleII").text("The Horizon campaign is a work in progress.");
       plural = false;
       makeGreen();
       $(".colorselect").addClass("deselect unsuitable");
