@@ -749,7 +749,7 @@ $(document).ready(function(){
     clearChoices();
     var input = $("#hz").val();
     if (input == "rinHZ"){
-      $("#subtitle").text("The Rinley Yatskaya Series");
+      $("#subtitle").text("The Eldritch Studies of Rinley Yatskaya");
       $("#subtitleII").text("The Horizon campaign is a work in progress.");
       plural = false;
       makeGreen();
@@ -789,6 +789,35 @@ $(document).ready(function(){
     stripe();
   });
 
+  function recolorSet(newColor, value){
+    var selector = "#onequests ." + value + newColor;
+    var temp = $(selector);
+    $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
+    temp.addClass("chosen");
+    temp.children(".hideXP").removeClass("hideXP");
+    selector = "#twoquests ." + value + newColor;
+    temp = $(selector);
+    $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
+    temp.addClass("chosen");
+    temp.children(".hideXP").removeClass("hideXP");
+    selector = "#threequests ." + value + newColor;
+    temp = $(selector);
+    $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
+    temp.addClass("chosen");
+    temp.children(".hideXP").removeClass("hideXP");
+    selector = "#fourquests ." + value + newColor;
+    temp = $(selector);
+    $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
+    temp.addClass("chosen");
+    temp.children(".hideXP").removeClass("hideXP");
+    selector = "#fivequests ." + value + newColor;
+    temp = $(selector);
+    $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
+    temp.addClass("chosen");
+    temp.children(".hideXP").removeClass("hideXP");
+    clearXP();
+  }
+
   //show/hide by color
   $("#blu").on("click", function() {
     var skip = false;
@@ -804,7 +833,7 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
-    clearChoices();
+    /*clearChoices();*/
     $(this).removeClass("deselect");
     $("button.colorselect:not('#blu')").addClass("deselect");
     makeBlue();
@@ -812,7 +841,7 @@ $(document).ready(function(){
     nonblu.addClass('hideColor');
     showMoreQuests();
     if (!skip){
-      var value, selector, temp = 0;
+      var value = 0;
       var colChar = ".b";
       if ($("#generic").val() != "default"){
         value = $("#generic").val();
@@ -824,35 +853,10 @@ $(document).ready(function(){
         value = $("#hz").val();
       }
       if (value){
-        selector = "#onequests ." + value + colChar;
-        temp = $(selector);
-        $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#twoquests ." + value + colChar;
-        temp = $(selector);
-        $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#threequests ." + value + colChar;
-        temp = $(selector);
-        $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fourquests ." + value + colChar;
-        temp = $(selector);
-        $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fivequests ." + value + colChar;
-        temp = $(selector);
-        $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        clearXP();
+        recolorSet(colChar, value);
       }
       else {
-        compatible("blue");
+        compatible("b");
       }
     }
     stripe();
@@ -873,7 +877,6 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
-    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#ora')").addClass("deselect");
     makeOrange();
@@ -881,7 +884,7 @@ $(document).ready(function(){
     nonora.addClass('hideColor');
     showMoreQuests();
     if (!skip){
-      var value, selector, temp = 0;
+      var value = 0;
       var colChar = ".o";
       if ($("#generic").val() != "default"){
         value = $("#generic").val();
@@ -893,36 +896,11 @@ $(document).ready(function(){
         value = $("#hz").val();
       }
       if (value){
-        selector = "#onequests ." + value + colChar;
-        temp = $(selector);
-        $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#twoquests ." + value + colChar;
-        temp = $(selector);
-        $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#threequests ." + value + colChar;
-        temp = $(selector);
-        $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fourquests ." + value + colChar;
-        temp = $(selector);
-        $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fivequests ." + value + colChar;
-        temp = $(selector);
-        $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        clearXP();
+        recolorSet(colChar, value);
       }
-    }
-    else {
-      compatible("orange");
+      else {
+        compatible("o");
+      }
     }
     stripe();
   });
@@ -941,14 +919,13 @@ $(document).ready(function(){
       $(".dropdown").val("default");
       skip = true;
     }
-    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#gre')").addClass("deselect");
     makeGreen();
     greQ.removeClass('hideColor');
     nongre.addClass('hideColor');
     if (!skip){
-      var value, selector, temp = 0;
+      var value = 0;
       var colChar = ".g";
       if ($("#generic").val() != "default"){
         value = $("#generic").val();
@@ -960,35 +937,10 @@ $(document).ready(function(){
         value = $("#hz").val();
       }
       if (value){
-        selector = "#onequests ." + value + colChar;
-        temp = $(selector);
-        $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#twoquests ." + value + colChar;
-        temp = $(selector);
-        $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#threequests ." + value + colChar;
-        temp = $(selector);
-        $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fourquests ." + value + colChar;
-        temp = $(selector);
-        $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fivequests ." + value + colChar;
-        temp = $(selector);
-        $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        clearXP();
+        recolorSet(colChar, value);
       }
       else {
-        compatible("green");
+        compatible("g");
       }
     }
     stripe();
@@ -1009,14 +961,13 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
-    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#red')").addClass("deselect");
     makeRed();
     redQ.removeClass('hideColor');
     nonred.addClass('hideColor');
     if (!skip){
-      var value, selector, temp = 0;
+      var value = 0;
       var colChar = ".r";
       if ($("#generic").val() != "default") {
         value = $("#generic").val();
@@ -1028,35 +979,10 @@ $(document).ready(function(){
         value = $("#hz").val();
       }
       if (value){
-        selector = "#onequests ." + value + colChar;
-        temp = $(selector);
-        $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#twoquests ." + value + colChar;
-        temp = $(selector);
-        $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#threequests ." + value + colChar;
-        temp = $(selector);
-        $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fourquests ." + value + colChar;
-        temp = $(selector);
-        $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fivequests ." + value + colChar;
-        temp = $(selector);
-        $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        clearXP();
+        recolorSet(colChar, value);
       }
       else {
-        compatible("red");
+        compatible("r");
       }
     }
     stripe();
@@ -1077,14 +1003,13 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
-    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#gol')").addClass("deselect");
     makeGold();
     golQ.removeClass('hideColor');
     nongol.addClass('hideColor');
     if (!skip){
-      var value, selector, temp = 0;
+      var value = 0;
       var colChar = ".y";
       if ($("#generic").val() != "default"){
         value = $("#generic").val();
@@ -1096,35 +1021,10 @@ $(document).ready(function(){
         value = $("#hz").val();
       }
       if (value){
-        selector = "#onequests ." + value + colChar;
-        temp = $(selector);
-        $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#twoquests ." + value + colChar;
-        temp = $(selector);
-        $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#threequests ." + value + colChar;
-        temp = $(selector);
-        $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fourquests ." + value + colChar;
-        temp = $(selector);
-        $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fivequests ." + value + colChar;
-        temp = $(selector);
-        $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        clearXP();
+        recolorSet(colChar, value);
       }
       else {
-        compatible("gold");
+        compatible("y");
       }
     }
     stripe();
@@ -1145,14 +1045,13 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
-    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#pur')").addClass("deselect");
     makePurple();
     purQ.removeClass('hideColor');
     nonpur.addClass('hideColor');
     if (!skip){
-      var value, selector, temp = 0;
+      var value = 0;
       var colChar = ".p";
       if ($("#generic").val() != "default"){
         value = $("#generic").val();
@@ -1164,35 +1063,10 @@ $(document).ready(function(){
         value = $("#hz").val();
       }
       if (value){
-        selector = "#onequests ." + value + colChar;
-        temp = $(selector);
-        $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#twoquests ." + value + colChar;
-        temp = $(selector);
-        $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#threequests ." + value + colChar;
-        temp = $(selector);
-        $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fourquests ." + value + colChar;
-        temp = $(selector);
-        $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fivequests ." + value + colChar;
-        temp = $(selector);
-        $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        clearXP();
+        recolorSet(colChar, value);
       }
       else {
-        compatible("purple");
+        compatible("p");
       }
     }
     stripe();
@@ -1213,14 +1087,13 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
-    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#sil')").addClass("deselect");
     makeSilver();
     silQ.removeClass('hideColor');
     nonsil.addClass('hideColor');
     if (!skip){
-      var value, selector, temp = 0;
+      var value = 0;
       var colChar = ".s";
       if ($("#generic").val() != "default"){
         value = $("#generic").val();
@@ -1232,35 +1105,10 @@ $(document).ready(function(){
         value = $("#hz").val();
       }
       if (value){
-        selector = "#onequests ." + value + colChar;
-        temp = $(selector);
-        $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#twoquests ." + value + colChar;
-        temp = $(selector);
-        $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#threequests ." + value + colChar;
-        temp = $(selector);
-        $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fourquests ." + value + colChar;
-        temp = $(selector);
-        $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fivequests ." + value + colChar;
-        temp = $(selector);
-        $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        clearXP();
+        recolorSet(colChar, value);
       }
       else {
-        compatible("silver");
+        compatible("s");
       }
     }
     stripe();
@@ -1281,14 +1129,13 @@ $(document).ready(function(){
       clearChoices();
       skip = true;
     }
-    clearChoices();
     $(this).removeClass("deselect");
     $("button.colorselect:not('#bla')").addClass("deselect");
     makeBlack();
     blaQ.removeClass('hideColor');
     nonbla.addClass('hideColor');
     if (!skip){
-      var value, selector, temp = 0;
+      var value = 0;
       var colChar = ".k";
       if ($("#generic").val() != "default"){
         value = $("#generic").val();
@@ -1300,35 +1147,10 @@ $(document).ready(function(){
         value = $("#hz").val();
       }
       if (value){
-        selector = "#onequests ." + value + colChar;
-        temp = $(selector);
-        $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#twoquests ." + value + colChar;
-        temp = $(selector);
-        $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#threequests ." + value + colChar;
-        temp = $(selector);
-        $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fourquests ." + value + colChar;
-        temp = $(selector);
-        $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        selector = "#fivequests ." + value + colChar;
-        temp = $(selector);
-        $("#five").children(".choice").text($(temp).addClass("chosen").contents().eq(0).text()).addClass("chosen");
-        temp.addClass("chosen");
-        temp.children(".hideXP").removeClass("hideXP");
-        clearXP();
+        recolorSet(colChar, value);
       }
       else {
-        compatible("black");
+        compatible("k");
       }
     }
     stripe();
@@ -1336,8 +1158,48 @@ $(document).ready(function(){
 
 
   //possible future refinement: check for incompatability on color change then recalc XP
-  function compatible(color){
-
+  function compatible(col){
+    if (!$("#onequests").find(".chosen").hasClass(col)) {
+      quest1xp = 0;
+      $("#one").find(".choice").text("").removeClass("chosen");
+      $("#onequests").find(".chosen").removeClass("chosen");
+      $("#onequests").find(".highlight").removeClass("highlight");
+      $("#onequests").children("div").children("span").addClass("hideXP");
+      $(".hide1").removeClass("hide1");
+    }
+    if (!$("#twoquests").find(".chosen").hasClass(col)) {
+      quest2xp = 0;
+      $("#two").find(".choice").text("").removeClass("chosen");
+      $("#twoquests").find(".chosen").removeClass("chosen");
+      $("#twoquests").find(".highlight").removeClass("highlight");
+      $("#twoquests").children("div").children("span").addClass("hideXP");
+      $(".hide2").removeClass("hide2");
+    }
+    if (!$("#threequests").find(".chosen").hasClass(col)) {
+      quest3xp = 0;
+      $("#thr").find(".choice").text("").removeClass("chosen");
+      $("#threequests").find(".chosen").removeClass("chosen");
+      $("#threequests").find(".highlight").removeClass("highlight");
+      $("#threequests").children("div").children("span").addClass("hideXP");
+      $(".hide3").removeClass("hide3");
+    }
+    if (!$("#fourquests").find(".chosen").hasClass(col)) {
+      quest4xp = 0;
+      $("#four").find(".choice").text("").removeClass("chosen");
+      $("#fourquests").find(".chosen").removeClass("chosen");
+      $("#fourquests").find(".highlight").removeClass("highlight");
+      $("#fourquests").children("div").children("span").addClass("hideXP");
+      $(".hide4").removeClass("hide4");
+    }
+    if (!$("#fivequests").find(".chosen").hasClass(col)) {
+      quest5xp = 0;
+      $("#five").find(".choice").text("").removeClass("chosen");
+      $("#fivequests").find(".chosen").removeClass("chosen");
+      $("#fivequests").find(".highlight").removeClass("highlight");
+      $("#fivequests").children("div").children("span").addClass("hideXP");
+      $(".hide5").removeClass("hide5");
+    }
+    calcXP();
   }
   //xp tracking
   xpVals.on("click", function() {
