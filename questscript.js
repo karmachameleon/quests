@@ -749,7 +749,7 @@ $(document).ready(function(){
     clearChoices();
     var input = $("#hz").val();
     if (input == "rinHZ"){
-      $("#subtitle").text("The Eldritch Studies of Rinley Yatskaya");
+      $("#subtitle").text("The Metaphysical Investigations of Rinley Yatskaya");
       $("#subtitleII").text("The Horizon campaign is a work in progress.");
       plural = false;
       makeGreen();
