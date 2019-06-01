@@ -703,7 +703,7 @@ $(document).ready(function(){
       plural = true;
       makePurple();
       $(".colorselect").addClass("deselect unsuitable");
-      $("#blu, #pur, #sil, #yel").removeClass("deselect unsuitable");
+      $("#blu, #pur, #sil, #gol").removeClass("deselect unsuitable");
       purQ.removeClass('hideColor');
       nonpur.addClass('hideColor');
       showMoreQuests();
@@ -775,6 +775,39 @@ $(document).ready(function(){
       temp.addClass("chosen");
       temp.children(".hideXP").removeClass("hideXP");
       temp = $("#fivequests .rinHZ.g");
+      $("#five").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
+      temp.addClass("chosen");
+      temp.children(".hideXP").removeClass("hideXP");
+      clearXP();
+      $("span.xptotal").text("?");
+    }
+    else if (input == "sal"){
+      $("#subtitle").text("Psalida Caesar's Quest Set (quest names not final)");
+      $("#subtitleII").text("The Horizon campaign is a work in progress.");
+      plural = false;
+      makeGreen();
+      $(".colorselect").addClass("deselect unsuitable");
+      $("#gol").removeClass("deselect unsuitable");
+      golQ.removeClass('hideColor');
+      nongre.addClass('hideColor');
+      showMoreQuests();
+      var temp = $("#onequests .sal.y");
+      $("#one").children(".choice").text(temp.contents().eq(0).text()).addClass("chosen");
+      temp.addClass("chosen");
+      temp.children(".hideXP").removeClass("hideXP");
+      temp = $("#twoquests .sal.y");
+      $("#two").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
+      temp.addClass("chosen");
+      temp.children(".hideXP").removeClass("hideXP");
+      temp = $("#threequests .sal.y");
+      $("#thr").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
+      temp.addClass("chosen");
+      temp.children(".hideXP").removeClass("hideXP");
+      temp = $("#fourquests .sal.y");
+      $("#four").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
+      temp.addClass("chosen");
+      temp.children(".hideXP").removeClass("hideXP");
+      temp = $("#fivequests .sal.y");
       $("#five").children(".choice").text(temp.addClass("chosen").contents().eq(0).text()).addClass("chosen");
       temp.addClass("chosen");
       temp.children(".hideXP").removeClass("hideXP");
