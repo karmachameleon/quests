@@ -615,7 +615,7 @@ $(document).ready(function(){
     }
     else if (input == "seizhi"){
       $("#subtitle").text("The Secret History of Seizhi Schwan");
-      $("#subtitleII").text("Also used for interacting with The Angel of Fortitude as an NPC. WIP - XP data not entered yet.");
+      $("#subtitleII").text("Also used for interacting with The Angel of Fortitude as an NPC.");
       plural = false;
       makeOrange();
       $(".colorselect").addClass("deselect unsuitable");
