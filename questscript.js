@@ -1,7 +1,7 @@
 $(document).ready(function(){
   //hide extraneous elements, automatically assign color icons
   $(".reset").hide();
-  $(".bdbl, .gmdq, .tumbl, .hallo").addClass("hideCampaign");
+  $(".bdbl, .gmdq, .tumbl, .hallo, .139, .glitch").addClass("hideCampaign");
   addIcons();
   $(".hidden").removeClass("hidden");
   stripe();
@@ -69,6 +69,10 @@ $(document).ready(function(){
     $("#tumblrtoggle").text('Show quests from Tumblr');
     $(".hallo").addClass('hideCampaign');
     $("#HStoggle").text('Show quests from Halloween');
+    $(".139").addClass("hideCampaign");
+    $("#139toggle").text('Show quests from The Legendary 139');
+    $(".glitch").addClass("hideCampaign");
+    $("#Glitchtoggle").text('Show quests from Glitch');
     $(".hideColor, .hideSet, .hide1, .hide2, .hide3, .hide4, .hide5").removeClass("hideColor hideSet hide1 hide2 hide3 hide4 hide5");
     $("#onequests, #twoquests, #threequests, #fourquests, #fivequests").children("div").children("span").addClass("hideXP");
     $(".chosen").removeClass("chosen");
@@ -151,6 +155,16 @@ $(document).ready(function(){
     $(".hallo").toggleClass('hideCampaign');
     stripe();
     $(this).text($(this).text() == 'Show quests from Halloween' ? 'Hide quests from Halloween' : 'Show quests from Halloween');
+  });
+  $("#139toggle").on("click", function() {
+    $(".139").toggleClass('hideCampaign');
+    stripe();
+    $(this).text($(this).text() == 'Show quests from The Legendary 139' ? 'Hide quests from The Legendary 139' : 'Show quests from The Legendary 139');
+  });
+  $("#Glitchtoggle").on("click", function() {
+    $(".glitch").toggleClass('hideCampaign');
+    stripe();
+    $(this).text($(this).text() == 'Show quests from Glitch' ? 'Hide quests from Glitch' : 'Show quests from Glitch');
   });
 
   //swap between quest set menus
